@@ -1,4 +1,11 @@
 # multironic
+# Requirements:
+CentOS9-20220330
+4c / 16gb / 100gb
+
+# Install libvirt and prepare nodes 
+
+
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
