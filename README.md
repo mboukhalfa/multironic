@@ -91,6 +91,13 @@ virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 ```
+```
+sudo virsh net-start provisioning-1
+sudo virsh net-autostart provisioning-1
+sudo virsh net-start provisioning-2
+sudo virsh net-autostart provisioning-2
+
+```
 
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
