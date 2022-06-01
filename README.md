@@ -98,6 +98,50 @@ sudo virsh net-start provisioning-2
 sudo virsh net-autostart provisioning-2
 
 ```
+## Create domains 
+
+```XML
+<domain type='kvm'>
+	<name>node-1</name>
+	<memory unit='MiB'>8000</memory>
+	<vcpu>2</vcpu>
+	<os>
+		<type arch='x86_64' machine='q35'>hvm</type>
+		<nvram>/var/lib/libvirt/qemu/nvram/node-1.fd</nvram>
+		<boot dev='network'/>
+		<bootmenu enable='no'/>
+	</os>
+	<features>
+		<acpi/>
+		<apic/>
+		<pae/>
+	</features>
+	<cpu mode='host-passthrough'/>
+	<clock offset='utc'/>
+	<on_poweroff>destroy</on_poweroff>
+	<on_reboot>restart</on_reboot>
+	<on_crash>restart</on_crash>
+	<devices>
+		<disk type='volume' device='disk'>
+			<driver name='qemu' type='qcow2' cache='unsafe'/>
+			<source pool='mypool' volume='node-1.qcow2'/>
+			<target dev='sda' bus='scsi'/>
+		</disk>
+		<controller type='scsi' model='virtio-scsi' />
+		<interface type='bridge'>
+			<mac address='00:5c:52:31:3a:9c'/>
+			<source bridge='provisioning-1'/>
+			<model type='virtio'/>
+		</interface>
+		<console type='pty'/>
+		<input type='mouse' bus='ps2'/>
+		<graphics type='vnc' port='-1' autoport='yes'/>
+		<video>
+			<model type='cirrus' vram='9216' heads='1'/>
+		</video>
+	</devices>
+</domain>
+```
 
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
