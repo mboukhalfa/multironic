@@ -165,7 +165,10 @@ sudo virsh attach-interface --domain minikube --model virtio --source provisioni
 sudo virsh attach-interface --domain minikube --model virtio --source provisioning-2 --type network --config
 minikube start
 ```
-
+Add container images to a local registry
+```
+sudo podman run -d -p 5000:5000 --name registry docker.io/library/registry:2.7.1
+```
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
