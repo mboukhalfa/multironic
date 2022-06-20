@@ -174,13 +174,11 @@ sudo podman run -d -p 5000:5000 --name registry docker.io/library/registry:2.7.1
 sudo podman pod create infra-pod
 sudo podman pod create ironic-pod
 ```
+# TODO download ironic images later
 ```
-sudo minikube ssh sudo brctl addbr ironicendpoint
-sudo brctl addbr ironicendpoint
-sudo ip link set ironicendpoint up
-sudo sudo brctl addif  ironicendpoint eth2
-sudo ip addr add 172.22.0.2/24 dev ironicendpoint
+sudo mkdir -p /opt/ironic/html/images
 ```
+# Pull images
 ```
 quay.io/metal3-io/vbmc
 quay.io/metal3-io/sushy-tools
@@ -190,5 +188,13 @@ quay.io/metal3-io/ironic-client
 ~~quay.io/metal3-io/mariadb~~
 quay.io/metal3-io/keepalived
 ```
+```
+sudo minikube ssh sudo brctl addbr ironicendpoint
+sudo brctl addbr ironicendpoint
+sudo ip link set ironicendpoint up
+sudo sudo brctl addif  ironicendpoint eth2
+sudo ip addr add 172.22.0.2/24 dev ironicendpoint
+```
+
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
