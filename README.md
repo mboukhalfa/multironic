@@ -153,7 +153,11 @@ echo -e "DEVICE=provisioning\nTYPE=Bridge\nONBOOT=yes\nBOOTPROTO=static\nIPADDR=
 sudo systemctl restart NetworkManager.service
 # check that the interface is up if down turn it up 
 ```
-
+Install minikube
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
