@@ -157,7 +157,15 @@ Install minikube
 ```
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
+
+minikube config set driver kvm2
+minikube config set memory 4096
+usermod --append --groups libvirt `whoami`
+sudo virsh attach-interface --domain minikube --model virtio --source provisioning-1 --type network --config
+sudo virsh attach-interface --domain minikube --model virtio --source provisioning-2 --type network --config
+minikube start
 ```
+
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
