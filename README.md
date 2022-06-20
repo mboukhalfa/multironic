@@ -182,7 +182,7 @@ quay.io/metal3-io/sushy-tools
 quay.io/metal3-io/ironic-ipa-downloader
 quay.io/metal3-io/ironic:latest
 quay.io/metal3-io/ironic-client
-quay.io/metal3-io/mariadb
+~~quay.io/metal3-io/mariadb~~
 quay.io/metal3-io/keepalived
 ```
 # Ref
