@@ -98,7 +98,7 @@ sudo virsh net-start provisioning-2
 sudo virsh net-autostart provisioning-2
 
 ```
-## Create domains 
+## Define domains 
 
 ```XML
 <domain type='kvm'>
@@ -141,6 +141,10 @@ sudo virsh net-autostart provisioning-2
 		</video>
 	</devices>
 </domain>
+```
+
+```
+sudo virsh define node-1.xml
 ```
 
 ```
