@@ -146,6 +146,12 @@ sudo virsh net-autostart provisioning-2
 ```
 sudo virsh define node-1.xml
 ```
+Create the bridge
+```
+echo -e "DEVICE=provisioning\nTYPE=Bridge\nONBOOT=yes\nBOOTPROTO=static\nIPADDR=172.22.0.1\nNETMASK=255.255.255.1" | sudo dd of=/etc/sysconfig/network-scripts/ifcfg-provisioning-1
+sudo systemctl restart NetworkManager.service
+# check that the interface is up if down turn it up 
+```
 
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
