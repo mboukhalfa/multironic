@@ -364,6 +364,11 @@ EOF
 ```
 # Copy the generated configmap for ironic deployment
 cp "/opt/ironic/ironic_bmo_configmap.env"  "[BMOPATH]/ironic-deployment/keepalived/ironic_bmo_configmap.env"
+# Install go
+wget https://go.dev/dl/go1.18.3.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
+# Add this line to bashrc
+export PATH=$PATH:/usr/local/go/bin
 ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
