@@ -316,14 +316,17 @@ ipmitool -I lanplus -U admin -P password -H 172.22.0.1 -p 6230 power on
 sudo virsh list --all
 
 ```
-# Run ironic
+# Run management cluster
 ```
+minikube start --insecure-registry  172.22.0.1:5000
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
 sudo ip link set ironicendpoint up
 sudo sudo brctl addif  ironicendpoint eth2
 sudo ip addr add 172.22.0.2/24 dev ironicendpoint
 ```
+# Run ironic
+
 
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
