@@ -214,6 +214,17 @@ sudo podman run -d --net host --name httpd-infra --pod infra-pod \
 -v /opt/ironic:/shared --entrypoint /bin/runhttpd \
 127.0.0.1:5000/localimages/ironic:latest
 ```
+### Run vbmc and sushy-tools
+```
+sudo podman run -d --net host --name vbmc --pod infra-pod \
+     -v /opt/ironic/virtualbmc/vbmc:/root/.vbmc -v "/root/.ssh":/root/ssh \
+     127.0.0.1:5000/localimages/vbmc
+
+#shellcheck disable=SC2086
+sudo podman run -d --net host --name sushy-tools --pod infra-pod \
+     -v /opt/ironic/virtualbmc/sushy-tools:/root/sushy -v "/root/.ssh":/root/ssh \
+     127.0.0.1:5000/localimages/sushy-tools
+```
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
