@@ -334,7 +334,7 @@ sudo ip link set ironicendpoint2 up
 sudo brctl addif  ironicendpoint eth3
 sudo ip addr add 172.23.0.2/24 dev ironicendpoint2
 ```
-# Run ironic
+# Launch ironic
 
 
 # Ref
