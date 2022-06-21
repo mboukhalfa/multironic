@@ -320,6 +320,9 @@ sudo virsh list --all
 # Run management cluster
 ```
 minikube start
+# test create a deployment with image from the local registry 
+kubectl create deployment hello-node --image=172.22.0.1:5000/localimages/ironic-client
+# check the image was pulled successfully
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
 sudo ip link set ironicendpoint up
