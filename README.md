@@ -335,7 +335,10 @@ sudo brctl addif  ironicendpoint eth3
 sudo ip addr add 172.23.0.2/24 dev ironicendpoint2
 ```
 # Launch ironic
-
+### Clone BMO repo
+```
+git clone https://github.com/metal3-io/baremetal-operator.git
+```
 
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
