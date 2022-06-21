@@ -338,6 +338,28 @@ sudo ip addr add 172.23.0.2/24 dev ironicendpoint2
 ### Clone BMO repo
 ```
 git clone https://github.com/metal3-io/baremetal-operator.git
+cd baremetal-operator/
+```
+### Ironic bmo configmap
+why we call ironic bmo at this point we would just to focus on ironic
+```
+cat << EOF | sudo tee "$IRONIC_DATA_DIR/ironic_bmo_configmap.env"
+HTTP_PORT=6180
+PROVISIONING_IP=172.22.0.1
+PROVISIONING_CIDR=24
+PROVISIONING_INTERFACE=ironicendpoint2
+DHCP_RANGE=172.22.0.10,172.22.0.100
+DEPLOY_KERNEL_URL=http://172.22.0.2:6180/images/ironic-python-agent.kernel
+DEPLOY_RAMDISK_URL=http://172.22.0.2:6180/images/ironic-python-agent.initramfs
+IRONIC_ENDPOINT=http://172.22.0.2:6385/v1/
+IRONIC_INSPECTOR_ENDPOINT=http://172.22.0.2:5050/v1/
+CACHEURL=http://172.22.0.1/images
+IRONIC_FAST_TRACK=true
+RESTART_CONTAINER_CERTIFICATE_UPDATED="false"
+LISTEN_ALL_INTERFACES="false"
+INSPECTOR_REVERSE_PROXY_SETUP=true
+IRONIC_KERNEL_PARAMS=console=ttyS0
+EOF
 ```
 
 # Ref
