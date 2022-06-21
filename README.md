@@ -241,23 +241,23 @@ EOF
 
 cat <<EOF >> /virtualbmc/vbmc/conf/node-1/config
 [VirtualBMC]
-username = {{ vbmc_username }}
-password = {{ vbmc_password }}
-domain_name = {{ item.name }}
-libvirt_uri = {{ vbmc_libvirt_uri }}
-address = {{ vbmc_address }}
+username = admin
+password = password
+domain_name = node-1
+libvirt_uri = qemu+ssh://root@172.22.0.1/system?&keyfile=/root/ssh/id_rsa_virt_power&no_verify=1&no_tty=1
+address = 172.22.0.1
 active = True
-port = {{ item.virtualbmc_port }}
+port =  6230
 
 cat <<EOF >> /virtualbmc/vbmc/conf/node-2/config
 [VirtualBMC]
-username = {{ vbmc_username }}
-password = {{ vbmc_password }}
-domain_name = {{ item.name }}
-libvirt_uri = {{ vbmc_libvirt_uri }}
-address = {{ vbmc_address }}
+username = admin
+password = password
+domain_name = node-2
+libvirt_uri = qemu+ssh://root@172.22.0.1/system?&keyfile=/root/ssh/id_rsa_virt_power&no_verify=1&no_tty=1
+address = 172.23.0.1
 active = True
-port = {{ item.virtualbmc_port }}
+port =  6231
 ```
 ```
 sudo podman run -d --net host --name vbmc --pod infra-pod \
