@@ -325,9 +325,8 @@ kubectl create deployment hello-node --image=172.22.0.1:5000/localimages/ironic-
 # check the image was pulled successfully
 sudo minikube ssh 
 sudo brctl addbr ironicendpoint
-sudo brctl addbr ironicendpoint
 sudo ip link set ironicendpoint up
-sudo sudo brctl addif  ironicendpoint eth2
+sudo brctl addif  ironicendpoint eth2
 sudo ip addr add 172.22.0.2/24 dev ironicendpoint
 ```
 # Run ironic
