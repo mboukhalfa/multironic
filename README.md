@@ -296,15 +296,24 @@ sudo podman exec -ti vbmc vbmc "$@"
 ```
 sudo ln -sf [absolutepath]/vbmc.sh /usr/local/bin/vbmc
 ```
-# At this point we still cannot control libvirt nodes with vbmc why ? 
+# Check that two vbmcs are running for the two nodes
 ```
 [centos@mohammed-mutlidocs ~]$ vbmc list
 +-------------+---------+------------+------+
 | Domain name | Status  | Address    | Port |
 +-------------+---------+------------+------+
-| node-1      | down    | 172.22.0.1 | 6230 |
+| node-1      | running | 172.22.0.1 | 6230 |
 | node-2      | running | 172.22.0.1 | 6231 |
 +-------------+---------+------------+------+
+
+```
+# Play with vbmc and ipmitools
+
+```
+sudo yum install OpenIPMI ipmitool
+ipmitool -I lanplus -U admin -P password -H 172.22.0.1 -p 6230 power on
+# Check the domain is running on virsh
+sudo virsh list --all
 
 ```
 ```
