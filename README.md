@@ -208,6 +208,12 @@ sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/ironic-ipa-downl
 sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/sushy-tools
 sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/vbmc
 ```
+# run httpd
+```
+sudo podman run -d --net host --name httpd-infra --pod infra-pod \
+-v /opt/ironic:/shared --entrypoint /bin/runhttpd \
+127.0.0.1:5000/localimages/ironic:latest
+```
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
