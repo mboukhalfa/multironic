@@ -343,7 +343,7 @@ cd baremetal-operator/
 ### Ironic bmo configmap
 why we call ironic bmo at this point we would just to focus on ironic
 ```
-cat << EOF | sudo tee "$IRONIC_DATA_DIR/ironic_bmo_configmap.env"
+cat << EOF | sudo tee "/opt/ironic/ironic_bmo_configmap.env"
 HTTP_PORT=6180
 PROVISIONING_IP=172.22.0.1
 PROVISIONING_CIDR=24
