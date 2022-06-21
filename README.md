@@ -296,6 +296,17 @@ sudo podman exec -ti vbmc vbmc "$@"
 ```
 sudo ln -sf [absolutepath]/vbmc.sh /usr/local/bin/vbmc
 ```
+# At this point we still cannot control libvirt nodes with vbmc why ? 
+```
+[centos@mohammed-mutlidocs ~]$ vbmc list
++-------------+---------+------------+------+
+| Domain name | Status  | Address    | Port |
++-------------+---------+------------+------+
+| node-1      | down    | 172.22.0.1 | 6230 |
+| node-2      | running | 172.22.0.1 | 6231 |
++-------------+---------+------------+------+
+
+```
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
