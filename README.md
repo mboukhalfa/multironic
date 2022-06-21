@@ -260,7 +260,7 @@ address = 172.23.0.1
 active = True
 port =  6231
 
-cat <<EOF >> opt/ironic/virtualbmc/sushy-tools/conf.py
+cat <<EOF >> /opt/ironic/virtualbmc/sushy-tools/conf.py
 SUSHY_EMULATOR_LIBVIRT_URI = "qemu+ssh://root@172.22.0.1/system?&keyfile=/root/ssh/id_rsa_virt_power&no_verify=1&no_tty=1"
 SUSHY_EMULATOR_IGNORE_BOOT_DEVICE = False
 SUSHY_EMULATOR_VMEDIA_VERIFY_SSL = False
