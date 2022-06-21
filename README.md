@@ -287,6 +287,15 @@ ae873fc0e77b  localhost/podman-pause:4.1.0-1653464416                         21
 88b76fffc3a8  127.0.0.1:5000/localimages/ironic:latest                        About an hour ago  Up About an hour ago                          httpd-infra
 a16d5f464c2b  127.0.0.1:5000/localimages/vbmc:latest    /bin/sh -c /usr/b...  22 seconds ago     Up 22 seconds ago                             vbmc
 ```
+### Add vbmc client
+Create vbmc.sh
+```
+#!/bin/bash
+sudo podman exec -ti vbmc vbmc "$@"
+```
+```
+sudo ln -sf vbmc.sh /usr/local/bin/vbmc
+```
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
