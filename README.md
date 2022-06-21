@@ -278,6 +278,15 @@ sudo podman run -d --net host --name sushy-tools --pod infra-pod \
      -v /opt/ironic/virtualbmc/sushy-tools:/root/sushy -v "/root/.ssh":/root/ssh \
      127.0.0.1:5000/localimages/sushy-tools
 ```
+### Check containers are running
+```
+$sudo podman ps
+CONTAINER ID  IMAGE                                     COMMAND               CREATED            STATUS                PORTS                   NAMES
+b512380a1e48  docker.io/library/registry:2.7.1          /etc/docker/regis...  23 hours ago       Up 23 hours ago       0.0.0.0:5000->5000/tcp  registry
+ae873fc0e77b  localhost/podman-pause:4.1.0-1653464416                         21 hours ago       Up About an hour ago                          452124918e59-infra
+88b76fffc3a8  127.0.0.1:5000/localimages/ironic:latest                        About an hour ago  Up About an hour ago                          httpd-infra
+a16d5f464c2b  127.0.0.1:5000/localimages/vbmc:latest    /bin/sh -c /usr/b...  22 seconds ago     Up 22 seconds ago                             vbmc
+```
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
