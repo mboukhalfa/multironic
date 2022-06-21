@@ -372,6 +372,8 @@ sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.18.3.linux-amd64.ta
 export PATH=$PATH:/usr/local/go/bin
 # Then source bashrc
 source /etc/bashrc
+# Deploy ironic
+export IRONIC_HOST_IP=172.22.0.2
 ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
