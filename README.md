@@ -264,6 +264,9 @@ SUSHY_EMULATOR_LIBVIRT_URI = "qemu+ssh://root@172.22.0.1/system?&keyfile=/root/s
 SUSHY_EMULATOR_IGNORE_BOOT_DEVICE = False
 SUSHY_EMULATOR_VMEDIA_VERIFY_SSL = False
 SUSHY_EMULATOR_AUTH_FILE = "/root/sushy/htpasswd"
+
+ sudo ssh-keygen -f /root/.ssh/id_rsa_virt_power -P ""
+ sudo cat /root/.ssh/id_rsa_virt_power.pub | sudo tee -a /root/.ssh/authorized_keys
 ```
 ```
 sudo podman run -d --net host --name vbmc --pod infra-pod \
