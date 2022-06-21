@@ -215,6 +215,50 @@ sudo podman run -d --net host --name httpd-infra --pod infra-pod \
 127.0.0.1:5000/localimages/ironic:latest
 ```
 ### Run vbmc and sushy-tools
+#### Create VirtualBMC directories
+```
+sudo mkdir /opt/ironic/virtualbmc
+sudo mkdir /opt/ironic/virtualbmc/vbmc
+sudo mkdir /opt/ironic/virtualbmc/vbmc/conf
+sudo mkdir /opt/ironic/virtualbmc/vbmc/log
+sudo mkdir /opt/ironic/virtualbmc/sushy-tools
+
+cat <<EOF >> /opt/ironic/virtualbmc/vbmc/virtualbmc.conf
+[default]
+config_dir=/root/.vbmc/conf/
+[log]
+logfile=/root/.vbmc/log/virtualbmc.log
+debug=True
+[ipmi]
+session_timout=20
+EOF
+
+# Create nodes configuration
+# create a dir for each node
+/virtualbmc/vbmc/conf/node-1
+/virtualbmc/vbmc/conf/node-2
+# add config for each
+
+cat <<EOF >> /virtualbmc/vbmc/conf/node-1/config
+[VirtualBMC]
+username = {{ vbmc_username }}
+password = {{ vbmc_password }}
+domain_name = {{ item.name }}
+libvirt_uri = {{ vbmc_libvirt_uri }}
+address = {{ vbmc_address }}
+active = True
+port = {{ item.virtualbmc_port }}
+
+cat <<EOF >> /virtualbmc/vbmc/conf/node-2/config
+[VirtualBMC]
+username = {{ vbmc_username }}
+password = {{ vbmc_password }}
+domain_name = {{ item.name }}
+libvirt_uri = {{ vbmc_libvirt_uri }}
+address = {{ vbmc_address }}
+active = True
+port = {{ item.virtualbmc_port }}
+```
 ```
 sudo podman run -d --net host --name vbmc --pod infra-pod \
      -v /opt/ironic/virtualbmc/vbmc:/root/.vbmc -v "/root/.ssh":/root/ssh \
