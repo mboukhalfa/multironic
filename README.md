@@ -239,7 +239,7 @@ EOF
 /virtualbmc/vbmc/conf/node-2
 # add config for each
 
-cat <<EOF >> /virtualbmc/vbmc/conf/node-1/config
+cat <<EOF >> /opt/ironic/virtualbmc/vbmc/conf/node-1/config
 [VirtualBMC]
 username = admin
 password = password
@@ -249,7 +249,7 @@ address = 172.22.0.1
 active = True
 port =  6230
 
-cat <<EOF >> /virtualbmc/vbmc/conf/node-2/config
+cat <<EOF >> /opt/ironic/virtualbmc/vbmc/conf/node-2/config
 [VirtualBMC]
 username = admin
 password = password
