@@ -361,6 +361,9 @@ INSPECTOR_REVERSE_PROXY_SETUP=true
 IRONIC_KERNEL_PARAMS=console=ttyS0
 EOF
 ```
-
+```
+# Copy the generated configmap for ironic deployment
+cp "/opt/ironic/ironic_bmo_configmap.env"  "[BMOPATH]/ironic-deployment/keepalived/ironic_bmo_configmap.env"
+```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
