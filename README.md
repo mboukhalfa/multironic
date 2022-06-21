@@ -163,7 +163,8 @@ minikube config set memory 4096
 usermod --append --groups libvirt `whoami`
 sudo virsh attach-interface --domain minikube --model virtio --source provisioning-1 --type network --config
 sudo virsh attach-interface --domain minikube --model virtio --source provisioning-2 --type network --config
-minikube start
+minikube start  --insecure-registry  172.22.0.1:5000
+minikube stop
 ```
 Add container images to a local registry
 ```
@@ -318,7 +319,7 @@ sudo virsh list --all
 ```
 # Run management cluster
 ```
-minikube start --insecure-registry  172.22.0.1:5000
+minikube start
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
 sudo ip link set ironicendpoint up
