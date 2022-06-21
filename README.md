@@ -368,8 +368,10 @@ cp "/opt/ironic/ironic_bmo_configmap.env"  "[BMOPATH]/ironic-deployment/keepaliv
 sudo yum install wget
 wget https://go.dev/dl/go1.18.3.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz
-# Add this line to bashrc
+# Add this line to /etc/bashrc
 export PATH=$PATH:/usr/local/go/bin
+# Then source bashrc
+source /etc/bashrc
 ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
