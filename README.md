@@ -294,7 +294,7 @@ Create vbmc.sh
 sudo podman exec -ti vbmc vbmc "$@"
 ```
 ```
-sudo ln -sf vbmc.sh /usr/local/bin/vbmc
+sudo ln -sf [absolutepath]/vbmc.sh /usr/local/bin/vbmc
 ```
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
