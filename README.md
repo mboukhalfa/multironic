@@ -188,6 +188,26 @@ quay.io/metal3-io/ironic-client
 ~~quay.io/metal3-io/mariadb~~
 quay.io/metal3-io/keepalived
 ```
+# Tag images
+
+```
+sudo podman tag quay.io/metal3-io/vbmc 127.0.0.1:5000/localimages/vbmc
+sudo podman tag quay.io/metal3-io/sushy-tools 127.0.0.1:5000/localimages/sushy-tools
+sudo podman tag quay.io/metal3-io/ironic-ipa-downloader 127.0.0.1:5000/localimages/ironic-ipa-downloader
+sudo podman tag quay.io/metal3-io/ironic-client 127.0.0.1:5000/localimages/ironic-client
+sudo podman tag quay.io/metal3-io/keepalived 127.0.0.1:5000/localimages/keepalived
+sudo podman tag quay.io/metal3-io/ironic:latest 127.0.0.1:5000/localimages/ironic:latest
+```
+# Push images
+
+```
+sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/keepalived </pre>
+sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/ironic-client
+sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/ironic:latest
+sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/ironic-ipa-downloader
+sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/sushy-tools
+sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/vbmc
+```
 ```
 sudo minikube ssh sudo brctl addbr ironicendpoint
 sudo brctl addbr ironicendpoint
