@@ -377,3 +377,4 @@ export IRONIC_HOST_IP=172.22.0.2
 ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
+https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
