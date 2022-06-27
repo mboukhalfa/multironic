@@ -376,7 +376,8 @@ source /etc/bashrc
 export IRONIC_HOST_IP=172.22.0.2
 ```
 Work around:
-Currently bmo deploy ironic does not parameterize the name space thus we can edit the deploy.sh script so we generate yaml first then we edit name space and apply after
+Currently bmo deploy ironic does not parameterize the name space thus we can edit the deploy.sh script so we generate yaml first then we edit name space and apply after.
+The generated file before chaging namespace [ironic.yaml](ironic.yaml)
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
 https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
