@@ -383,7 +383,7 @@ The generated file before chaging namespace [ironic.yaml](ironic.yaml)
 from the previous we change namespace,image,readiness, and delete mariadb since not used [ironic-ns.yaml](ironic-ns.yaml)
 
 ## Create Ironic client
-Use the script [ironicclient.yaml](ironicclient.yaml)
+Use the script [ironicclient.sh](ironicclient.sh)
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
 https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
