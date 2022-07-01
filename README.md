@@ -345,7 +345,7 @@ why we call ironic bmo at this point we would just to focus on ironic
 ```
 cat << EOF | sudo tee "/opt/ironic/ironic_bmo_configmap.env"
 HTTP_PORT=6180
-PROVISIONING_IP=172.22.0.1
+PROVISIONING_IP=172.22.0.2
 PROVISIONING_CIDR=24
 PROVISIONING_INTERFACE=ironicendpoint
 DHCP_RANGE=172.22.0.10,172.22.0.100
