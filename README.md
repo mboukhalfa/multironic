@@ -393,6 +393,8 @@ Use the script [ironicclient.sh](ironicclient.sh)
 ## Create bmo
 #### generate yaml:
 edit line : `${KUSTOMIZE} build "${BMO_SCENARIO}" > bmo.yaml #| kubectl apply ${KUBECTL_ARGS} -f -`
+generate bmo yaml [bmo.yaml](bmo.yaml)
+
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
 https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
