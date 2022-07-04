@@ -188,6 +188,7 @@ quay.io/metal3-io/ironic:latest
 quay.io/metal3-io/ironic-client
 ~~quay.io/metal3-io/mariadb~~
 quay.io/metal3-io/keepalived
+quay.io/metal3-io/baremetal-operator
 ```
 # Tag images
 
@@ -198,6 +199,7 @@ sudo podman tag quay.io/metal3-io/ironic-ipa-downloader 127.0.0.1:5000/localimag
 sudo podman tag quay.io/metal3-io/ironic-client 127.0.0.1:5000/localimages/ironic-client
 sudo podman tag quay.io/metal3-io/keepalived 127.0.0.1:5000/localimages/keepalived
 sudo podman tag quay.io/metal3-io/ironic:latest 127.0.0.1:5000/localimages/ironic:latest
+sudo podman tag quay.io/metal3-io/baremetal-operator:latest 127.0.0.1:5000/localimages/baremetal-operator:latest
 ```
 # Push images
 
@@ -208,6 +210,7 @@ sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/ironic:latest
 sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/ironic-ipa-downloader
 sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/sushy-tools
 sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/vbmc
+sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/baremetal-operator:latest
 ```
 # run httpd
 ```
