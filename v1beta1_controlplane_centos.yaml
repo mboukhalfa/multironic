@@ -2,7 +2,7 @@ apiVersion: controlplane.cluster.x-k8s.io/v1beta1
 kind: KubeadmControlPlane
 metadata:
   name: test1
-  namespace: metal3
+  namespace: test1
 spec:
   kubeadmConfigSpec:
     clusterConfiguration: {}
@@ -176,7 +176,7 @@ apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: Metal3MachineTemplate
 metadata:
   name: test1-controlplane
-  namespace: metal3
+  namespace: test1
 spec:
   template:
     spec:
@@ -192,7 +192,7 @@ apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: Metal3DataTemplate
 metadata:
   name: test1-controlplane-template
-  namespace: metal3
+  namespace: test1
 spec:
   clusterName: test1
   metaData:
