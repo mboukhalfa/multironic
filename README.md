@@ -405,6 +405,32 @@ edit RBAC
 kubectl apply -f bmo-1.yaml -n baremetal-operator-system-test1
 kubectl apply -f bmo-2.yaml -n baremetal-operator-system-test2
 ```
+## Creating bmhs:
+```
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: node-0-bmc-secret
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: cGFzc3dvcmQ=
+
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: node-0
+spec:
+  online: true
+  bootMACAddress: 00:5c:52:31:3a:9c
+  bootMode: legacy
+  bmc:
+    address: ipmi://172.22.0.1:6230
+    credentialsName: node-0-bmc-secret
+
+```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
 https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
