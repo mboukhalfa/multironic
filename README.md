@@ -456,6 +456,12 @@ spec:
 # run capm3
 ## get clusterctl
 ```
+curl -L https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.1.5/clusterctl-linux-amd64 -o clusterctl
+chmod +x ./clusterctl
+sudo mv ./clusterctl /usr/local/bin/clusterctl
+```
+## init the cluster
+```
 clusterctl init --core cluster-api:1.1.5 --bootstrap kubeadm:1.1.5 --control-plane kubeadm:1.1.5 --infrastructure=metal3:v1.1.2  -v5
 ```
 # Ref
