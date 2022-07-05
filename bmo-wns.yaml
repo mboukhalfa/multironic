@@ -1928,10 +1928,11 @@ rules:
   - delete
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
+kind: Role
 metadata:
   creationTimestamp: null
   name: baremetal-operator-manager-role
+  namespace: baremetal-operator-system-test1
 rules:
 - apiGroups:
   - ""
@@ -2115,13 +2116,15 @@ subjects:
   namespace: baremetal-operator-system-test1
 ---
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: RoleBinding
 metadata:
   name: baremetal-operator-manager-rolebinding
+  namespace: baremetal-operator-system-test1
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
+  kind: Role
   name: baremetal-operator-manager-role
+  namespace: baremetal-operator-system-test1
 subjects:
 - kind: ServiceAccount
   name: baremetal-operator-controller-manager
