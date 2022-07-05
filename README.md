@@ -453,6 +453,11 @@ spec:
     credentialsName: node-1-bmc-secret
 
 ```
+# run capm3
+## get clusterctl
+```
+clusterctl init --core cluster-api:1.1.5 --bootstrap kubeadm:1.1.5 --control-plane kubeadm:1.1.5 --infrastructure=metal3:v1.1.2  -v5
+```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
 https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
