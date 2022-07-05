@@ -403,7 +403,7 @@ edit RBAC
 ### apply BMO in two different ns:
 ```
 kubectl apply -f bmo-1.yaml -n baremetal-operator-system-test1
-kubectl apply -f ironic-2.yaml -n baremetal-operator-system-test2
+kubectl apply -f bmo-2.yaml -n baremetal-operator-system-test2
 ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
