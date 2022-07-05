@@ -429,6 +429,28 @@ spec:
   bmc:
     address: ipmi://172.22.0.1:6230
     credentialsName: node-0-bmc-secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: node-1-bmc-secret
+type: Opaque
+data:
+  username: YWRtaW4=
+  password: cGFzc3dvcmQ=
+
+---
+apiVersion: metal3.io/v1alpha1
+kind: BareMetalHost
+metadata:
+  name: node-1
+spec:
+  online: true
+  bootMACAddress: 00:5c:52:31:3a:ad
+  bootMode: legacy
+  bmc:
+    address: ipmi://172.23.0.1:6231
+    credentialsName: node-1-bmc-secret
 
 ```
 # Ref
