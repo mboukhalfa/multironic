@@ -298,6 +298,7 @@ Create vbmc.sh
 sudo podman exec -ti vbmc vbmc "$@"
 ```
 ```
+sudo chmod a+x vbmc.sh
 sudo ln -sf [absolutepath]/vbmc.sh /usr/local/bin/vbmc
 ```
 # Check that two vbmcs are running for the two nodes
