@@ -308,7 +308,7 @@ sudo ln -sf [absolutepath]/vbmc.sh /usr/local/bin/vbmc
 | Domain name | Status  | Address    | Port |
 +-------------+---------+------------+------+
 | node-1      | running | 172.22.0.1 | 6230 |
-| node-2      | running | 172.22.0.1 | 6231 |
+| node-2      | running | 172.23.0.1 | 6231 |
 +-------------+---------+------------+------+
 
 ```
