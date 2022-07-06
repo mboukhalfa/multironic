@@ -258,7 +258,7 @@ cat <<EOF >> /opt/ironic/virtualbmc/vbmc/conf/node-2/config
 username = admin
 password = password
 domain_name = node-2
-libvirt_uri = qemu+ssh://root@172.22.0.1/system?&keyfile=/root/ssh/id_rsa_virt_power&no_verify=1&no_tty=1
+libvirt_uri = qemu+ssh://root@172.23.0.1/system?&keyfile=/root/ssh/id_rsa_virt_power&no_verify=1&no_tty=1
 address = 172.23.0.1
 active = True
 port =  6231
