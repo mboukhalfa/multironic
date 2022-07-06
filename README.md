@@ -160,7 +160,7 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 minikube config set driver kvm2
 minikube config set memory 4096
-usermod --append --groups libvirt `whoami`
+sudo usermod --append --groups libvirt `whoami`
 minikube start  --insecure-registry  # 172.22.0.1:5000 / but I used the host ip 
 minikube stop
 sudo virsh attach-interface --domain minikube --model virtio --source provisioning-1 --type network --config
