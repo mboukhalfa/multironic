@@ -392,8 +392,19 @@ kubectl apply -f ironic-1.yaml -n baremetal-operator-system-test1
 kubectl apply -f ironic-2.yaml -n baremetal-operator-system-test2
 ```
 ## Create Ironic client
+```
+sudo ln -sf "/home/metal3ci/ironicclient.sh" "/usr/local/bin/baremetal"
+```
 Use the script [ironicclient.sh](ironicclient.sh)
 
+create `_clouds_yaml/clouds.yaml` with the content : 
+```
+clouds:
+  metal3:
+    auth_type: none
+    baremetal_endpoint_override: http://172.22.0.2:6385
+    baremetal_introspection_endpoint_override: http://172.22.0.2:5050
+```
 ## Create bmo
 #### generate yaml:
 edit line : `${KUSTOMIZE} build "${BMO_SCENARIO}" > bmo.yaml #| kubectl apply ${KUBECTL_ARGS} -f -`
