@@ -406,6 +406,13 @@ clouds:
     baremetal_introspection_endpoint_override: http://172.22.0.2:5050
 ```
 ## Create bmo
+
+#### install cert manager 
+```
+wget https://github.com/cert-manager/cert-manager/releases/download/v1.5.3/cert-manager.yaml
+kubectl apply -f cert-manager.yaml
+
+```
 #### generate yaml:
 edit line : `${KUSTOMIZE} build "${BMO_SCENARIO}" > bmo.yaml #| kubectl apply ${KUBECTL_ARGS} -f -`
 generate bmo yaml [bmo.yaml](bmo.yaml)
