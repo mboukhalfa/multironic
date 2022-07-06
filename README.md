@@ -155,7 +155,7 @@ sudo systemctl restart NetworkManager.service
 ```
 Install minikube
 ```
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+curl -LO https://storage.googleapis.com/minikube/releases/v1.25.2/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 
 minikube config set driver kvm2
