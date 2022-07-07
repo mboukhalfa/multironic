@@ -173,8 +173,8 @@ sudo podman run -d -p 5000:5000 --name registry docker.io/library/registry:2.7.1
 ```
 # have to check why we need this
 ```
-sudo podman pod create infra-pod
-sudo podman pod create ironic-pod
+sudo podman pod create -n infra-pod
+sudo podman pod create -n ironic-pod
 ```
 # TODO download ironic images later
 ```
