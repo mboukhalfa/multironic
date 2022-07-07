@@ -182,14 +182,14 @@ sudo mkdir -p /opt/ironic/html/images
 ```
 # Pull images
 ```
-quay.io/metal3-io/vbmc
-quay.io/metal3-io/sushy-tools
-quay.io/metal3-io/ironic-ipa-downloader
-quay.io/metal3-io/ironic:latest
-quay.io/metal3-io/ironic-client
-~~quay.io/metal3-io/mariadb~~
-quay.io/metal3-io/keepalived
-quay.io/metal3-io/baremetal-operator
+sudo podman pull quay.io/metal3-io/vbmc
+sudo podman pull quay.io/metal3-io/sushy-tools
+sudo podman pull quay.io/metal3-io/ironic-ipa-downloader
+sudo podman pull quay.io/metal3-io/ironic:latest
+sudo podman pull quay.io/metal3-io/ironic-client
+sudo podman pull quay.io/metal3-io/keepalived
+sudo podman pull quay.io/metal3-io/baremetal-operator
+#sudo podman pull quay.io/metal3-io/mariadb
 ```
 # Tag images
 
