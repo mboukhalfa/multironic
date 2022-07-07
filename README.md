@@ -273,6 +273,10 @@ SUSHY_EMULATOR_VMEDIA_VERIFY_SSL = False
 SUSHY_EMULATOR_AUTH_FILE = "/root/sushy/htpasswd"
 EOF
 
+cat <<EOF >> /opt/ironic/virtualbmc/sushy-tools/htpasswd
+admin:$2b$12$/dVOBNatORwKpF.ss99KB.vESjfyONOxyH.UgRwNyZi1Xs/W2pGVS
+EOF
+
 sudo ssh-keygen -f /root/.ssh/id_rsa_virt_power -P ""
 sudo cat /root/.ssh/id_rsa_virt_power.pub | sudo tee -a /root/.ssh/authorized_keys
 ```
