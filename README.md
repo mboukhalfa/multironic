@@ -240,8 +240,8 @@ EOF
 
 # Create nodes configuration
 # create a dir for each node
-/opt/ironic/virtualbmc/vbmc/conf/node-1
-/opt/ironic/virtualbmc/vbmc/conf/node-2
+mkdir -p /opt/ironic/virtualbmc/vbmc/conf/node-1
+mkdir -p /opt/ironic/virtualbmc/vbmc/conf/node-2
 # add config for each
 
 cat <<EOF >> /opt/ironic/virtualbmc/vbmc/conf/node-1/config
@@ -253,6 +253,7 @@ libvirt_uri = qemu+ssh://root@172.22.0.1/system?&keyfile=/root/ssh/id_rsa_virt_p
 address = 172.22.0.1
 active = True
 port =  6230
+EOF
 
 cat <<EOF >> /opt/ironic/virtualbmc/vbmc/conf/node-2/config
 [VirtualBMC]
@@ -263,15 +264,17 @@ libvirt_uri = qemu+ssh://root@172.23.0.1/system?&keyfile=/root/ssh/id_rsa_virt_p
 address = 172.23.0.1
 active = True
 port =  6231
+EOF
 
 cat <<EOF >> /opt/ironic/virtualbmc/sushy-tools/conf.py
 SUSHY_EMULATOR_LIBVIRT_URI = "qemu+ssh://root@172.22.0.1/system?&keyfile=/root/ssh/id_rsa_virt_power&no_verify=1&no_tty=1"
 SUSHY_EMULATOR_IGNORE_BOOT_DEVICE = False
 SUSHY_EMULATOR_VMEDIA_VERIFY_SSL = False
 SUSHY_EMULATOR_AUTH_FILE = "/root/sushy/htpasswd"
+EOF
 
- sudo ssh-keygen -f /root/.ssh/id_rsa_virt_power -P ""
- sudo cat /root/.ssh/id_rsa_virt_power.pub | sudo tee -a /root/.ssh/authorized_keys
+sudo ssh-keygen -f /root/.ssh/id_rsa_virt_power -P ""
+sudo cat /root/.ssh/id_rsa_virt_power.pub | sudo tee -a /root/.ssh/authorized_keys
 ```
 ```
 sudo podman run -d --net host --name vbmc --pod infra-pod \
