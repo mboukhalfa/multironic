@@ -491,6 +491,16 @@ sudo mv ./clusterctl /usr/local/bin/clusterctl
 ```
 clusterctl init --core cluster-api:v1.1.5 --bootstrap kubeadm:v1.1.5 --control-plane kubeadm:v1.1.5 --infrastructure=metal3:v1.1.2  -v5
 ```
+# Firewall
+```
+provisioning_host_ports:
+  # Caching HTTP Server
+  - "80"
+  # Container image registry
+  - 5000
+  # DNS for registry naming resolution
+  - "53"
+  ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
 https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
