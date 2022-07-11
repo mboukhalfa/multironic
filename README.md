@@ -493,7 +493,7 @@ clusterctl init --core cluster-api:v1.1.5 --bootstrap kubeadm:v1.1.5 --control-p
 ```
 # Firewall
 ```
-provisioning_host_ports:
+provisioning_host_ports: (**/tcp**)
   # Caching HTTP Server
   - "80"
   # Container image registry
@@ -501,6 +501,27 @@ provisioning_host_ports:
   # DNS for registry naming resolution
   - "53"
   ```
+  ```
+  ironic_ports:(**/tcp**)
+  - "{{ http_port }}"
+  - "{{ ironic_inspector_port }}"
+  - "{{ ironic_api_port }}"
+  - "9999"
+  - "80"
+ ```
+ ```
+ pxe_udp_ports:(**/udp**)
+  # Multicast DNS
+  - "5353"
+  # DHCP
+  - "67"
+  - "68"
+  # DHCPv6
+  - "546"
+  - "547"
+  # TFTP
+  - "69"
+ ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
 https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
