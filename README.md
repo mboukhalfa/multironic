@@ -531,14 +531,14 @@ provisioning_host_ports: (**/tcp**)
   ```
   ```
   sudo firewall-cmd --add-port=port-number/port-type
-  for i in 
-do 8000 80 9999 6385 5050 6180 53 5000
-  firewall-cmd --zone=public --add-port=${i}/tcp
+  for i in 8000 80 9999 6385 5050 6180 53 5000
+do 
+ sudo  firewall-cmd --zone=public --add-port=${i}/tcp
 done
 
 for i in 69 547 546 68 67 5353 6230 6231 6232 6233 6234 6235
 do
-  firewall-cmd --zone=public --add-port=${i}/udp
+ sudo firewall-cmd --zone=public --add-port=${i}/udp
 done
   ```
 # Ref
