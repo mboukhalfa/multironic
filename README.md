@@ -346,6 +346,18 @@ sudo ip link set ironicendpoint2 up
 sudo brctl addif  ironicendpoint2 eth3
 sudo ip addr add 172.23.0.2/24 dev ironicendpoint2
 ```
+# Firewall
+```
+for i in 8000 80 9999 6385 5050 6180 53 5000
+do 
+ sudo  firewall-cmd --zone=public --add-port=${i}/tcp
+done
+
+for i in 69 547 546 68 67 5353 6230 6231 6232 6233 6234 6235
+do
+ sudo firewall-cmd --zone=public --add-port=${i}/udp
+done
+```
 # Launch ironic
 ### Clone BMO repo
 ```
@@ -531,15 +543,7 @@ provisioning_host_ports: (**/tcp**)
   ```
   ```
   sudo firewall-cmd --add-port=port-number/port-type
-  for i in 8000 80 9999 6385 5050 6180 53 5000
-do 
- sudo  firewall-cmd --zone=public --add-port=${i}/tcp
-done
 
-for i in 69 547 546 68 67 5353 6230 6231 6232 6233 6234 6235
-do
- sudo firewall-cmd --zone=public --add-port=${i}/udp
-done
   ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
