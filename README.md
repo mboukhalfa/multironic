@@ -503,9 +503,9 @@ provisioning_host_ports: (**/tcp**)
   ```
   ```
   ironic_ports:(**/tcp**)
-  - "{{ http_port }}"
-  - "{{ ironic_inspector_port }}"
-  - "{{ ironic_api_port }}"
+  - "{{ http_port: 6180 }}"
+  - "{{ ironic_inspector_port:5050 }}"
+  - "{{ ironic_api_port: 6385 }}"
   - "9999"
   - "80"
  ```
@@ -522,6 +522,10 @@ provisioning_host_ports: (**/tcp**)
   # TFTP
   - "69"
  ```
+  ```
+ - name: "firewalld: sushy Port"
+8000
+  ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
 https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
