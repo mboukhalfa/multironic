@@ -522,12 +522,24 @@ provisioning_host_ports: (**/tcp**)
   # TFTP
   - "69"
  ```
+ ```
+ vbmc_port_range/udp: "6230:6235"
   ```
- - name: "firewalld: sushy Port"
+  ```
+ - name: "firewalld: sushy Port/ tcp"
 8000
   ```
   ```
   sudo firewall-cmd --add-port=port-number/port-type
+  for i in 
+do 8000 80 9999 6385 5050 6180 53 5000
+  firewall-cmd --zone=public --add-port=${i}/tcp
+done
+
+for i in 69 547 546 68 67 5353 6230 6231 6232 6233 6234 6235
+do
+  firewall-cmd --zone=public --add-port=${i}/udp
+done
   ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
