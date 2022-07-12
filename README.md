@@ -526,6 +526,9 @@ provisioning_host_ports: (**/tcp**)
  - name: "firewalld: sushy Port"
 8000
   ```
+  ```
+  sudo firewall-cmd --add-port=port-number/port-type
+  ```
 # Ref
 Ironic troubleshooting: https://opendev.org/openstack/ironic/src/commit/e5a1997df840080d53e3bc2a12ac9169c3f96990/doc/source/admin/troubleshooting.rst
 https://github.com/metal3-io/metal3-docs/blob/main/design/use-ironic.md
