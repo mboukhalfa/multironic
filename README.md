@@ -444,6 +444,11 @@ edit RBAC
 kubectl apply -f bmo-1.yaml -n baremetal-operator-system-test1
 kubectl apply -f bmo-2.yaml -n baremetal-operator-system-test2
 ```
+#### Apply role and role binding in the wached namespace
+```
+kubectl apply -f role.yaml -n test1
+kubectl apply -f rolebinding.yaml -n test1
+```
 ## Creating bmhs:
 ```
 ---
