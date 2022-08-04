@@ -215,6 +215,7 @@ sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/vbmc
 sudo podman  push --tls-verify=false 127.0.0.1:5000/localimages/baremetal-operator:latest
 ```
 # run httpd
+* export PROVISIONING_INTERFACE=provisioning-2 or 1
 ```
 sudo podman run -d --net host --name httpd-infra --pod infra-pod \
 -v /opt/ironic:/shared --entrypoint /bin/runhttpd \
