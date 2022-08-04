@@ -181,6 +181,7 @@ sudo podman pod create -n ironic-pod
 sudo mkdir -p /opt/ironic/html/images
 ```
 # Pull images
+* build ironic image locally with changes in PR and ironic-inspector-config/inspector-apache.conf.j2 serverName
 ```
 sudo podman pull quay.io/metal3-io/vbmc
 sudo podman pull quay.io/metal3-io/sushy-tools
