@@ -170,7 +170,7 @@ spec:
   rolloutStrategy:
     rollingUpdate:
       maxSurge: 1
-  version: v1.23.5
+  version: v1.24.1
 ---
 apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: Metal3MachineTemplate
@@ -183,10 +183,10 @@ spec:
       dataTemplate:
         name: test1-controlplane-template
       image:
-        checksum: http://172.22.0.1/images/CENTOS_9_NODE_IMAGE_K8S_v1.23.5-raw.img.md5sum
+        checksum: http://172.22.0.1/images/CENTOS_9_NODE_IMAGE_K8S_v1.24.1-raw.img.md5sum
         checksumType: md5
         format: raw
-        url: http://172.22.0.1/images/CENTOS_9_NODE_IMAGE_K8S_v1.23.5-raw.img
+        url: http://172.22.0.1/images/CENTOS_9_NODE_IMAGE_K8S_v1.24.1-raw.img
 ---
 apiVersion: infrastructure.cluster.x-k8s.io/v1beta1
 kind: Metal3DataTemplate
